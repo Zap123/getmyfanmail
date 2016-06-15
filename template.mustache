@@ -1,0 +1,61 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="description" content="A layout example that shows off a responsive email layout.">
+    <title>Tumblr Fanmail</title>
+<link rel="stylesheet" href="http://yui.yahooapis.com/pure/0.6.0/pure-min.css">
+    <!--[if lte IE 8]>
+        <link rel="stylesheet" href="css/layouts/email-old-ie.css">
+    <![endif]-->
+    <!--[if gt IE 8]><!-->
+        <link rel="stylesheet" href="css/layouts/email.css">
+    <!--<![endif]-->
+
+</head>
+<body>
+<div id="layout" class="content pure-g">
+    <div id="nav" class="pure-u">
+    </div>
+
+    <div id="list" class="pure-u-1">
+	{{#fanmail}}
+        <div class="email-item pure-g">
+            <div class="pure-u">
+                <a href={{url}} target="_blank"><img class="email-avatar" alt="{{name}}&#x27;s avatar" height="64" width="64" src="{{avatar}}"></a>
+            </div>
+
+            <div class="pure-u-3-4">
+                <h5 class="email-name"><a href=#{{name}} name="[u]{{name}}">{{name}}</a></h5>
+                <p class="email-desc">
+                    {{message.0}}
+                </p>
+            </div>
+        </div>
+	{{/fanmail}}
+    </div>
+    <div id="main" class="pure-u-1">
+        <div class="email-content">
+       		{{#fanmail}}
+            <div class="email-content-header pure-g">
+                <div class="pure-u-1-2">
+                </div>
+            </div>
+
+            <div class="email-content-body">
+                    <p class="email-content-subtitle">
+                        <span>From <a name={{name}} href="#[u]{{name}}">{{name}}</a></span>
+                    </p>
+		   {{#message}}
+                <p>
+		   {{.}}
+                </p>
+		   {{/message}}
+            </div>
+       		{{/fanmail}}
+        </div>
+    </div>
+</div>
+</body>
+</html>

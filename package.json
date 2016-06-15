@@ -1,0 +1,19 @@
+{
+  "name": "getyourfanmail",
+  "version": "1.0.0",
+  "description": "dump your fanmail data from Tumblr.com",
+  "main": "getmyfanmail.js",
+  "dependencies": {
+    "casperjs": "1.1.0",
+    "mustache": "^2.2.1"
+  },
+  "devDependencies": {},
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "mustache data.json template.mustache > tpl/index.html"
+  },
+  "keywords": [
+    "tumblr"
+  ],
+  "author": "Luca Costa"
+}
